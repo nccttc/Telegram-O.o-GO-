@@ -93,18 +93,59 @@
 
 #### 第 4 步：让机器人在后台永久运行 (生产环境)
 
-为了让机器人在你关闭 SSH 连接后依然能 7x24 小时运行，你需要使用进程管理器。这里推荐两种方法：
+为了让机器人在你关闭 SSH 连接后依然能 7x24 小时运行，你需要使用进程管理器：
 
-> 1. 创建一个名为 "telegram\_bot" 的 screen 会话 screen -S telegram\_bot
->    `screen -S telegram_bot`
-
-> 2. 在新的会话窗口中，启动机器人 (如果使用了虚拟环境，请先激活)
->    `source venv/bin/activate`
->    `python3 forwarder_bot_v4.py`
-
-> 3. 按下 Ctrl + A 然后再按 D，即可安全离开会话。机器人会继续在后台运行。
->    若要返回会话，使用 `screen -r telegram_bot`
-
+> 1.创建一个`sudo nano /etc/systemd/system/telegram_forwarder.service`服务
+> 
+> 2.将下面的配置粘贴到文件中。注意： 你需要修改 WorkingDirectory 和 ExecStart 中的路径，使其指向你自己的文件路径和python解释器路径。
+> 
+>   [Unit]
+> 
+>   Description=Telegram Forwarder Bot
+> 
+>   After=network.target
+>
+>   [Service]
+> 
+>   User=root  #或者你的用户名
+> 
+>   #你的项目文件所在的绝对路径
+> 
+>   WorkingDirectory=/path/to/your/bot/directory
+> 
+>   #你的python解释器的绝对路径 (可以用 which python3 命令查看)
+> 
+>   ExecStart=/usr/bin/python3 /path/to/your/bot/directory/forwarder_bot.py
+> 
+>   Restart=always
+> 
+>   RestartSec=10
+>
+>   [Install]
+> 
+>   WantedBy=multi-user.target
+> 
+> >* 你可以通过 pwd 命令查看当前目录的绝对路径。
+> > 
+> > * 你可以通过 which python3 命令查看python3的绝对路径。
+>    
+> 3.#重新加载systemd配置
+> 
+>   sudo systemctl daemon-reload
+> 
+>   #启动你的机器人服务
+> 
+>   sudo systemctl start telegram_forwarder
+>
+>   #设置开机自启
+> 
+>   sudo systemctl enable telegram_forwarder 
+>
+> 5.检查服务状态：
+> 
+>   sudo systemctl status telegram_forwarder
+>
+> 如果看到 `active (running)` 的绿色字样，说明你的机器人已经作为系统服务成功运行了！现在，你就拥有了一个稳定、可靠、能转发各类消息的个人Telegram机器人了。
 ---
 
 # 部署完成！
