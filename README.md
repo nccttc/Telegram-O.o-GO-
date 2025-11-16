@@ -45,7 +45,7 @@
 
 > # 1. 克隆本仓库
 > 
-> git clone https://github.com/your-username/your-repo-name.git
+> git clone [https://github.com/your-username/your-repo-name.git](https://github.com/nccttc/Telegram-/blob/main/forwarder_bot_v4.py)
 > 
 > # 2. 进入项目目录
 > 
