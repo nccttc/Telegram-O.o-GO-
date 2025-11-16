@@ -67,7 +67,7 @@
 > 
 > 
 > 
-> pip install -r requirements.txt
+> pip install python-telegram-bot --upgrade
 
 #### 第 2 步：配置机器人
 
