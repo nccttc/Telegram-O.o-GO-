@@ -45,11 +45,11 @@
 
 > # 1. 克隆本仓库
 > 
-> git clone [https://github.com/your-username/your-repo-name.git](https://github.com/nccttc/Telegram-/blob/main/forwarder_bot_v4.py)
+> git clone https://github.com/nccttc/Telegram-/blob/main/forwarder_bot_v4.py
 > 
 > # 2. 进入项目目录
 > 
-> cd your-repo-name
+> cd forwarder_bot_v4.py
 > 
 > # 3.创建并激活 Python 虚拟环境
 > 
