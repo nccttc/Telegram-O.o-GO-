@@ -79,6 +79,7 @@
    
    > [Telegram]
    > BOT_TOKEN = 123456:ABC-DEF1234ghIkl-zyx57W2v1u123456789
+   > 
    > OWNER_ID = 123456789
 
 #### 第 3 步：启动机器人
