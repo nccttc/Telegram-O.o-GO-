@@ -78,6 +78,7 @@
 2. 编辑 **```config.ini```** 文件，填入你在```准备工作```中获取到的凭证。
    
    > [Telegram]
+   > 
    > BOT_TOKEN = 123456:ABC-DEF1234ghIkl-zyx57W2v1u123456789
    > 
    > OWNER_ID = 123456789
