@@ -49,7 +49,7 @@
 
 > # 1. 复制本代码
 > 
-> https://github.com/nccttc/Telegram-/blob/main/forwarder_bot_v4.py
+> https://github.com/nccttc/Telegram-O.o-GO-/blob/main/forwarder_bot_v4.py
 > 
 > # 2. 进入项目目录
 > 
