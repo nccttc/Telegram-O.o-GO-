@@ -47,9 +47,9 @@
 
 **连接到你的 VPS 终端，执行以下命令。**
 
-> # 1. 克隆本仓库
+> # 1. 复制本代码
 > 
-> git clone https://github.com/nccttc/Telegram-/blob/main/forwarder_bot_v4.py
+> https://github.com/nccttc/Telegram-/blob/main/forwarder_bot_v4.py
 > 
 > # 2. 进入项目目录
 > 
