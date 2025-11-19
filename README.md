@@ -137,6 +137,7 @@
 > 3.常用控制指令
 > 
 >   #停止服务
+> 
 >   sudo systemctl stop telegram_forwarder
 >   
 >   #重新加载systemd配置
