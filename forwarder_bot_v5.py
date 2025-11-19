@@ -1,4 +1,4 @@
-# forwarder_bot_v5.py（加入人机验证）
+# forwarder_bot_v5.py>加入人机验证
 import random
 import logging
 import configparser
