@@ -134,7 +134,12 @@
 > > 
 > > * 你可以通过 which python3 命令查看python3的绝对路径。
 >    
-> 3.#重新加载systemd配置
+> 3.常用控制指令
+> 
+>   #停止服务
+>   sudo systemctl stop telegram_forwarder
+>   
+>   #重新加载systemd配置
 > 
 >   sudo systemctl daemon-reload
 > 
