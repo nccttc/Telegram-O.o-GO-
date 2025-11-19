@@ -82,7 +82,7 @@ async def post_init(application: Application) -> None:
 
 新增用户验证功能，答错3次永久拉黑。
 
-新增指令: /clear 清理缓存
+可用指令: /clear 清理缓存
             """,
             parse_mode=ParseMode.MARKDOWN
         )
@@ -243,7 +243,7 @@ def auth_challenge_layer(target_func_ptr):
                 del exam_paper[sender_identity]
                 if sender_identity in attempt_tracker:
                     del attempt_tracker[sender_identity]
-                await incoming_pkg.message.reply_html("✅ <b>验证通过！</b>\n\n您已获得使用权限，请重新发送您的消息。")
+                await incoming_pkg.message.reply_html("✅ <b>验证通过！</b>\n\n您已获得使用权限，请重新发送 /start。")
             else:
                 # 答错逻辑
                 current_mistakes = attempt_tracker.get(sender_identity, 0) + 1
