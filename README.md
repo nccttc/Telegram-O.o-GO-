@@ -102,7 +102,7 @@
 
 > 1.创建一个`sudo nano /etc/systemd/system/telegram_forwarder.service`服务
 > 
-> 2.将下面的配置粘贴到文件中。注意： 你需要修改 WorkingDirectory 和 ExecStart 中的路径，使其指向你自己的文件路径和python解释器路径。
+> 2.将下面的配置粘贴到文件中（注意格式）。你需要修改 WorkingDirectory 和 ExecStart 中的路径，使其指向你自己的项目.py路径和python解释器路径。
 > 
 >   [Unit]
 > 
@@ -112,7 +112,7 @@
 >
 >   [Service]
 > 
->   User=root  #或者你的用户名
+>   User=root
 > 
 >   #你的项目文件所在的绝对路径
 > 
