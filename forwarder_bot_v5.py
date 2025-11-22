@@ -102,8 +102,8 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
         )
     else:
         await update.message.reply_html(
-            f"你好, {user.mention_html()}！👋\n\n"
-            "这里是主人的私人信箱。您可以发送任何消息（文本、图片、文件等），我都会安全地转达。"
+            f" {user.mention_html()}！\n\n"
+            "可以发送任何消息。"
         )
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -114,7 +114,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         help_text += ("- <b>回复消息:</b> 直接使用Telegram的“回复”功能，即可将您的消息发送给原始用户。\n"
                       "- <code>/clear</code>: 清除所有消息的回复记录。当您觉得缓存过多时可以使用。")
     else:
-        help_text += "直接发送消息即可与我的主人联系。无需任何命令。"
+        help_text += "无需任何命令。"
     await update.message.reply_html(help_text)
 
 async def clear_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -159,10 +159,10 @@ async def forward_message_handler(update: Update, context: ContextTypes.DEFAULT_
         save_mapping() # 持久化存储
         logger.info(f"消息从 {user.id} 转发。映射已更新并保存。")
 
-        await message.reply_html("✅ 您的消息已成功送达。")
+        await message.reply_html("✅送达。")
     except TelegramError as e:
         logger.error(f"转发消息失败: {e}")
-        await message.reply_html("❌ 抱歉，消息发送失败，请稍后再试。")
+        await message.reply_html("❌失败。")
 
 async def reply_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """处理主人的回复，并将其发送给原始用户"""
@@ -177,7 +177,7 @@ async def reply_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
 
     try:
         await message.copy(chat_id=original_user_id)
-        await message.reply_html("✅ 回复已成功发送！")
+        await message.reply_html("✅成功！")
         logger.info(f"已将主人的回复发送给用户 {original_user_id}")
     except TelegramError as e:
         error_message = f"❌ <b>发送回复失败</b>\n\n错误信息: <code>{e}</code>"
@@ -243,7 +243,7 @@ def auth_challenge_layer(target_func_ptr):
                 del exam_paper[sender_identity]
                 if sender_identity in attempt_tracker:
                     del attempt_tracker[sender_identity]
-                await incoming_pkg.message.reply_html("✅ <b>验证通过！</b>\n\n您已获得使用权限，请重新发送 /start。")
+                await incoming_pkg.message.reply_html("✅ <b>验证通过！</b>\n\n已获得使用权限，请重新发送 /start。")
             else:
                 # 答错逻辑
                 current_mistakes = attempt_tracker.get(sender_identity, 0) + 1
@@ -259,7 +259,7 @@ def auth_challenge_layer(target_func_ptr):
                         await incoming_pkg.message.reply_html(
                             "❌ <b>验证失败</b>\n\n"
                             "机会已耗尽，系统判定为恶意访问。\n"
-                            "您已被<b>永久拉黑</b>。"
+                            "已被<b>永久拉黑</b>。"
                         )
                     except:
                         pass
@@ -269,7 +269,7 @@ def auth_challenge_layer(target_func_ptr):
                         await incoming_pkg.message.reply_html(
                             f"⚠️ <b>回答错误</b>\n\n"
                             f"请核对算式后重试。\n"
-                            f"您还有 <b>{remains}</b> 次尝试机会。"
+                            f"还有 <b>{remains}</b> 次尝试机会。"
                         )
                     except:
                         pass
