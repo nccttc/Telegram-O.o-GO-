@@ -116,11 +116,11 @@
 > 
 >   #你的项目文件所在的绝对路径
 > 
->   WorkingDirectory=/path/to/your/bot/directory
+>   WorkingDirectory=/文件路径
 > 
 >   #你的python解释器的绝对路径 (可以用 which python3 命令查看)
 > 
->   ExecStart=/usr/bin/python3 /path/to/your/bot/directory/forwarder_bot.py
+>   ExecStart=/文件路径/python3 /文件路径/forwarder_bot_v5.py
 > 
 >   Restart=always
 > 
