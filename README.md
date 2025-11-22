@@ -43,17 +43,18 @@
 
 ## 3. 部署步骤
 
-#### 第 1 步：克隆仓库并安装依赖
+#### 第 1 步：下载.py文件并安装依赖
 
 **连接到你的 VPS 终端，执行以下命令。**
 
-> # 1. 复制本代码
+> # 1. 下载本项目
 > 
-> https://github.com/nccttc/Telegram-O.o-GO-/blob/main/forwarder_bot_v4.py
+> 下载.py项目到你喜欢的目录。（一定要记得住，后面要用。）
 > 
 > # 2. 进入项目目录
-> 
-> cd forwarder_bot_v4.py
+>
+> cd到你的项目目录
+> cd /文件目录
 >
 > # 3.创建并激活 Python 虚拟环境
 >
@@ -75,9 +76,7 @@
 
 #### 第 2 步：配置机器人
 
-1. 项目根目录下有一个 **```config.ini.example```** 文件。请复制一份并重命名为 **```config.ini```**。
-   
-   > cp config.ini.example config.ini
+1. 在项目目录里插件一个命名为 **```config.ini```** 的文件。
 
 2. 编辑 **```config.ini```** 文件，填入你在```准备工作```中获取到的凭证。
    
@@ -90,10 +89,11 @@
 #### 第 3 步：启动机器人
 
 你可以先在前台启动来测试机器人是否配置正确。
+运行命令:
 
-> python3 forwarder_bot_v4.py
+> python3 项目.py
 
-此时，你的机器人应该已经在线。你可以用你的主人账号给机器人发送 **```/start```**，应该会收到管理员专属欢迎语。同时，你的管理员账号也会收到一条"机器人已启动"的通知。
+此时，你的机器人应该已经在线。同时你的管理员账号也会收到一条"机器人已启动"的通知。
 
 
 #### 第 4 步：让机器人在后台永久运行 (生产环境)
@@ -116,11 +116,11 @@
 > 
 >   #你的项目文件所在的绝对路径
 > 
->   WorkingDirectory=/文件路径
+>   WorkingDirectory=/项目路径
 > 
 >   #你的python解释器的绝对路径 (可以用 which python3 命令查看)
 > 
->   ExecStart=/文件路径/python3 /文件路径/forwarder_bot_v5.py
+>   ExecStart=/项目路径/python3 /项目路径/forwarder_bot_v5.py
 > 
 >   Restart=always
 > 
