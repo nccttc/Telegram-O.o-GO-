@@ -54,16 +54,16 @@
 > # 2. 进入项目目录
 > 
 > cd forwarder_bot_v4.py
-> 
+>
 > # 3.创建并激活 Python 虚拟环境
+>
 > 
-> 
-> 
+> apt install python3.13-venv
 > 
 > python3 -m venv venv
+> 
 > source venv/bin/activate
 > 
-> >
 > 
 > 
 > # 4. 安装所需的库
