@@ -2,7 +2,7 @@
 
 | 用户 | 管理员 |
 |:---:|:---:|
-| <img src="https://i.mji.rip/2025/11/16/c2b89a284b3fd8d19e75ec7980e41b11.jpeg" width="300" alt="输入图片"> | <img src="https://i.mji.rip/2025/11/16/3681176a9a1ef5e26ee65b196704f915.jpeg" width="300" alt="输出结果"> |
+| <img src="https://i.mji.rip/2025/11/16/c2b89a284b3fd8d19e75ec7980e41b1.jpeg" width="300" alt="输入图片"> | <img src="https://i.mji.rip/2025/11/16/3681176a9a1ef5e26ee65b196704f15.jpeg" width="300" alt="输出结果"> |
 
 ## ✨ 功能特性
 
