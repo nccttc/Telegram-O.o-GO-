@@ -120,7 +120,7 @@
 > 
 >   #你的python解释器的绝对路径 (可以用 which python3 命令查看)
 > 
->   ExecStart=/项目路径/python3 /项目路径/forwarder_bot_v5.py
+>   ExecStart=/项目路径/python3 /项目路径/forwarder_bot_v版本号.py
 > 
 >   Restart=always
 > 
